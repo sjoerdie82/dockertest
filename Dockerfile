@@ -5,8 +5,8 @@ FROM postgres:12
 RUN mkdir temp
 
 # Create group and user
-RUN chgrp -R 0 /temp && \
-    chmod -R g=u /temp
+# RUN chgrp -R 0 /temp && \
+#     chmod -R g=u /temp
 
 RUN groupadd -g 1000 postgrestest \
     && useradd -M -u 1000 -g 1000 postgrestest \
@@ -17,7 +17,7 @@ RUN groupadd -g 1000 postgrestest \
 # to access the temp folder
 
 
-VOLUME /temp/data
+# VOLUME /temp/data
 
 # Change to non-root privilege
 
