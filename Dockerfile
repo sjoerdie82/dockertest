@@ -5,6 +5,8 @@ FROM postgres:12
 RUN mkdir temp
 
 # Create group and user
+RUN chgrp -R 0 /temp && \
+    chmod -R g=u /temp
 
 RUN groupadd -g 1000 postgrestest \
     && useradd -M -u 1000 -g 1000 postgrestest \
