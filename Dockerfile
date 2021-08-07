@@ -7,12 +7,12 @@ RUN mkdir temp
 # Create group and user
 
 RUN groupadd -g 1000 postgrestest
-RUN useradd -M -u 1000 -g 1000 postgrestest
+    && useradd -M -u 1000 -g 1000 postgrestest \
+    && chown -R postgrestest:postgrestest /app
 
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
 
-RUN chown -R postgrestest:postgrestest /temp
 
 VOLUME /temp/data
 
