@@ -7,7 +7,7 @@ RUN mkdir temp
 # Create group and user
 
 # RUN groupadd -g 1000 postgres
-RUN useradd -M -u 1000 -g 1000 postgres
+RUN useradd -M -u 1000 -g postgres
 
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
