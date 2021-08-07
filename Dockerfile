@@ -6,7 +6,7 @@ RUN mkdir temp
 
 # Create group and user
 
-RUN groupadd -g 1000 postgrestest
+RUN groupadd -g 1000 postgrestest \
     && useradd -M -u 1000 -g 1000 postgrestest \
     && chown -R postgrestest:postgrestest /app
 
