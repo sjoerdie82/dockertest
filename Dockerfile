@@ -11,7 +11,7 @@ FROM postgres:12
 RUN chown -R 1000620000:0 /var/run/postgresql \
     && chmod -R 2777 /var/run/postgresql
 
-RUN apt sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
     && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add - \
     && apt update
     && install postgis --no-install-recommends \
