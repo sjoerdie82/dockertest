@@ -9,7 +9,7 @@ FROM postgres:12
 #     chmod -R g=u /temp
 
 RUN chown -R :0 /var/run/postgresql
-
+    && chmod -R 777 /var/run/postgresql
 
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
