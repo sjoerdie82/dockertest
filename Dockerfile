@@ -15,7 +15,7 @@ RUN apt update \
 #    && apt-get -y install wget
 #    && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
 #    && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - \
-    && apt-get -y install --no-install-recommends \
+    && apt-get -y install postgis --no-install-recommends \
     
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
