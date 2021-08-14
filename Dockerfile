@@ -11,7 +11,7 @@ FROM postgres:12
 RUN chown -R 1000620000:0 /var/run/postgresql \
     && chmod -R 2777 /var/run/postgresql
 
-RUN: apt install postgis --no-install-recommends
+RUN apt install postgis --no-install-recommends
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
 
