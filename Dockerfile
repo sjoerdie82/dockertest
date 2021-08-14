@@ -8,8 +8,8 @@ FROM postgres:12
 # RUN chgrp -R 0 /temp && \
 #     chmod -R g=u /temp
 
-RUN chown -R 25:25 /var/run/postgresql /var/lib/postgresql/data \
-    && chmod -R 777 /var/run/postgresql /var/lib/postgresql/data
+RUN chown -R :0 /var/run/postgresql
+
 
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
@@ -19,4 +19,3 @@ RUN chown -R 25:25 /var/run/postgresql /var/lib/postgresql/data \
 
 # Change to non-root privilege
 
-USER 25
