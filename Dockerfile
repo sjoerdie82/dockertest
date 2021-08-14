@@ -8,9 +8,7 @@ FROM postgres:12
 # RUN chgrp -R 0 /temp && \
 #     chmod -R g=u /temp
 
-RUN groupadd -g 25 25 \
-    && useradd -M -u 25 -g 25 \
-    && chown -R 25:25 /var/run/postgresql /var/lib/postgresql/data \
+RUN chown -R 25:25 /var/run/postgresql /var/lib/postgresql/data \
     && chmod -R 777 /var/run/postgresql /var/lib/postgresql/data
 
 # Set user rights to allow the on-root-postgres-user 
