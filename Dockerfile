@@ -2,16 +2,16 @@ FROM postgres:12
 
 # Create the needed temp file before the first postgreSQL execution
 
-RUN mkdir temp
+# RUN mkdir temp
 
 # Create group and user
 # RUN chgrp -R 0 /temp && \
 #     chmod -R g=u /temp
 
-RUN groupadd -g 1000 postgrestest \
-    && useradd -M -u 1000 -g 1000 postgrestest \
-    && chown -R postgrestest:postgrestest /temp \
-    && chmod -R 777 /temp
+RUN groupadd -g 25 25 \
+    && useradd -M -u 25 -g 25 \
+    && chown -R 25:25 /var/run/postgresql /var/lib/postgresql/data \
+    && chmod -R 777 /var/run/postgresql /var/lib/postgresql/data
 
 # Set user rights to allow the on-root-postgres-user 
 # to access the temp folder
@@ -21,4 +21,4 @@ RUN groupadd -g 1000 postgrestest \
 
 # Change to non-root privilege
 
-USER postgrestest
+USER 25
