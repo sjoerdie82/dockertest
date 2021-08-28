@@ -14,7 +14,7 @@ FROM postgres:12
 RUN apt update \
     && apt-get -y install postgis postgresql-12-postgis-3
     && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
-    && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - \
+    && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - 
 #    && apt-get -y install postgresql-12-postgis-3.0 
     
 # Set user rights to allow the on-root-postgres-user 
