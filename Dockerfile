@@ -12,7 +12,7 @@ FROM postgres:12
 #     && chmod -R 2777 /var/run/postgresql
 
 RUN apt update \
-    && apt-get -y -y install postgis postgresql-12-postgis-3 \
+    && apt-get -y -y install postgis postgresql-12-postgis-3 wget\
     && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
     && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - \
     && apt-get -y install postgresql-12-postgis-3.0 
