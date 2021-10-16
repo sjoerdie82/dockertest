@@ -5,7 +5,7 @@ RUN yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
     && yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
 #    && dnf -qy module disable postgresql \
     && yum repolist \
-    && yum -y install postgis30_12 --no-best
+    && yum -y install postgis30_12 --nobest
 #    && dnf -y install dnf-plugins-core \
 #    && dnf upgrade \
     
