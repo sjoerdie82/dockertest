@@ -4,7 +4,6 @@ USER 0
 RUN yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm \
     && dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \  
     && dnf -y install dnf-plugins-core \
-    && subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
-#    && dnf config-manager --set-enabled powertools \
+    && yum config-manager --set-enabled powertools \
     && dnf -qy module disable postgresql \
     && yum -y install postgis25_12
