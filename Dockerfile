@@ -11,7 +11,7 @@ FROM registry.redhat.io/rhel8/postgresql-12:latest
 # RUN chown -R 1000620000:0 /var/run/postgresql \
 #     && chmod -R 2777 /var/run/postgresql
 
-RUN sudo yum -y install postgis25_12
+RUN yum -y install postgis25_12
 #    && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
 #    && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - 
 #    && apt-get -y install postgresql-12-postgis-3.0 
