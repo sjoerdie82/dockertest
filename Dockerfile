@@ -7,9 +7,10 @@ FROM bitnami/postgresql:12-debian-10
 # Create group and user
 # RUN chgrp -R 0 /temp && \
 #     chmod -R g=u /temp
-
+USER 0
 # RUN chown -R 1000620000:0 /var/run/postgresql \
 #     && chmod -R 2777 /var/run/postgresql
+USER 1001
 
 RUN apt update \
     && apt-get -y install postgis postgresql-12-postgis-3
