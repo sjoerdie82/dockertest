@@ -5,6 +5,7 @@ RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.n
     dnf -y install dnf-plugins-core && \
     dnf config-manager --set-disabled ubi-8-appstream && \
     dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+    dnf -y install http://mirror.centos.org/centos/8/AppStream/aarch64/os/Packages/libtiff-4.0.9-18.el8.aarch64.rpm && \
     dnf -y install postgis30_12
     
 
