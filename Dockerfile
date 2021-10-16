@@ -6,4 +6,4 @@ RUN yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x
     && dnf install dnf-plugins-core \
     && dnf config-manager --set-enabled PowerTools \
     && dnf -qy module disable postgresql \
-    && yum install postgis25_12
+    && yum -y install postgis25_12
