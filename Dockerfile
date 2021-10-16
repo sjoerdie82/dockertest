@@ -2,7 +2,8 @@ FROM registry.redhat.io/rhel8/postgresql-12:latest
 
 USER 0
 RUN yum -y module enable postgresql:12 && \
-    INSTALL_PKGS="rsync tar gettext bind-utils nss_wrapper postgresql-server postgresql-contrib postgis30_12" && \ 
+    yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+    INSTALL_PKGS="postgis30_12" && \ 
     yum -y --setopt=tsflags=nodocs install $INSTALL_PKGS
     
 
