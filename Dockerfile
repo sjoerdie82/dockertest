@@ -13,6 +13,9 @@ FROM bitnami/postgresql:12-debian-10
 
 USER 0
 RUN apt update \
+    && apt-get -y install gnupg2 \
+    && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \
+    && echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list \
     && apt-get -y install postgis postgresql-12-postgis-3
 #    && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list' \
 #    && wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add - 
