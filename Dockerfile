@@ -1,4 +1,4 @@
-FROM postgres:12
+FROM registry.redhat.io/rhel8/postgresql-12:latest
 
 # Create the needed temp file before the first postgreSQL execution
 
